@@ -103,6 +103,8 @@ class Home {
     async instancesSelect() {
         let configClient = await this.db.readData('configClient')
         let auth = await this.db.readData('accounts', configClient.account_selected)
+        const tooltip = document.querySelector('.player-tooltip')
+        tooltip.textContent = auth?.name ?? 'Inconnu'
         let instancesList = await config.getInstanceList()
         let instanceSelect = instancesList.find(i => i.name == configClient?.instance_selct) ? configClient?.instance_selct : null
 

@@ -260,6 +260,21 @@
     padding-right: 1.9rem;
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .play-btn {
     border: none;
     border-radius: 10px;
@@ -268,8 +283,15 @@
     font-size: 2rem;
     font-weight: bolder;
     padding: 0 1.5rem;
-    pointer-events: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer; /* activé maintenant */
 }
+
+.play-btn:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
 
 .instance-select {
     display: flex;
@@ -320,7 +342,15 @@
     font-size: 3rem;
     color: var(--element-color);
     margin: 0 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
 }
+
+.settings-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+    color: white;
+}
+
 
 .instance-popup {
     position: absolute;
@@ -375,4 +405,31 @@
 
 .active-instance {
     background: var(--element-color);
+}
+.player-head-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-tooltip {
+    position: absolute;
+    bottom: 110%; /* au-dessus de .player-head */
+    left: 50%;
+    transform: translateX(-50%) translateY(0px);
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.player-head-container:hover .player-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
 }
