@@ -29,12 +29,23 @@
 .cancel {
     background: none;
     color: var(--color);
-    border: solid 4px var(--element-color);
+    border: solid 4px #ffbf47;
     border-radius: 10px;
     padding: 0.3rem 4rem;
     font-size: inherit;
     font-weight: bold;
     margin: 15px 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.connect:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+.cancel:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
 }
 
 .input-login .email,

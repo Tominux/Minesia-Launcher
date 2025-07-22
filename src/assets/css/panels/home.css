@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--background);
+    background: #fbae54;
     width: 25rem;
     height: 3rem;
     color: var(--color);
@@ -24,8 +24,14 @@
     margin-top: 3rem;
     padding: 1rem;
     text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
 }
 
+.status-server:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
 .server-status-icon {
     height: 3.3rem;
 }
@@ -36,12 +42,14 @@
 }
 
 .server-status-text {
-    font-size: 0.6rem;
-    color: #1AC707;
+    font-size: 0.9rem;
+    color: #79ffa2;
+    font-family: 'Poppins Regular', sans-serif;
+    text-shadow: 1px 1px 2px #000;
 }
 
 .server-status-infos .red {
-    color: #FF0409;
+    color: #ff4000;
 }
 
 .status-player-count {
@@ -94,12 +102,21 @@
 }
 
 .titre-tab-new {
-    margin-top: 1rem;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    background: var(--background-transparent);
-    color: var(--color);
+    background-image: url('../../images/actu.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 280px;
+    height: 98px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: transparent;
+    text-shadow: none;
+    transition: transform 0.2s ease;
+    margin-top: 25px; /* ← remonte le bouton */
+    background-color: transparent;
+    transform: translateY(-5px); /* déplace vraiment le bouton */
 }
 
 .news-list {
@@ -113,7 +130,7 @@
     width: 100%;
     margin: 0 0 1rem 0;
     border-radius: 10px;
-    background: var(--background-transparent);
+    background-color: rgba(255, 242, 224, 0.85);
 }
 
 .news-header {
@@ -183,7 +200,9 @@
 
 .social-block {
     display: flex;
-    background: var(--background-transparent);
+    background: linear-gradient(to bottom, #fca311, #e76f00);
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
+    border-top: 4px solid #ffbf47; 
     width: 90px;
     height: 90px;
     margin-bottom: 1rem;
@@ -192,6 +211,13 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.social-block:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
 }
 
 .social-block .icon-social {
@@ -212,9 +238,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 96.1%;
+    margin: 0 auto;
     height: 90px;
-    background: var(--background-transparent);
+    background: linear-gradient(to bottom, #fca311, #e76f00);
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
+    border-top: 4px solid #ffbf47;
+    padding: 0 1.5rem;
 }
 
 .player-options {
@@ -251,11 +281,10 @@
 
 .play-instance {
     display: flex;
+    background: transparent;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border: solid 3px var(--element-color);
-    border-radius: 15px;
     height: 3.2rem;
     padding-right: 1.9rem;
 }
@@ -276,21 +305,27 @@
 }
 
 .play-btn {
+    background-image: url('../../images/bouton-jouer.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     border: none;
-    border-radius: 10px;
-    background: none;
-    color: var(--color);
-    font-size: 2rem;
-    font-weight: bolder;
-    padding: 0 1.5rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-    cursor: pointer; /* activé maintenant */
+    width: 280px;
+    height: 98px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: transparent;
+    text-shadow: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-top: -25px; /* ← remonte le bouton */
+    background-color: transparent;
+    transform: translateY(-10px); /* déplace vraiment le bouton */
+}
+.play-btn:hover {
+    transform: translateY(-15px) scale(1.05); /* remonte encore un peu au survol */
 }
 
-.play-btn:hover {
-    transform: scale(1.1);
-    color: white;
-}
 
 
 .instance-select {
